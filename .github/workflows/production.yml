@@ -61,13 +61,13 @@ jobs:
         with:
           context: .
           push: true
-          tags: dhjariwala/hw9:${{ github.sha }}
+          tags: dhjariwala/hw9:latest
           platforms: linux/amd64,linux/arm64
           
       - name: Scan the Docker image
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'dhjariwala/hw9:${{ github.sha }}'
+          image-ref: 'dhjariwala/hw9:latest'
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
